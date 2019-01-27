@@ -21,7 +21,7 @@ module.exports = (context, callback) => {
       key: userid, // (required)
       value: false // (required)
     }, (err, resultSet) => {
-      callback(err, result);
+      callback(err, 'result: '+result);
     });
   });
 };
