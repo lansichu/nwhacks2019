@@ -5,7 +5,7 @@ module.exports = (userid = 'a', context, callback) => {
     if (err) {
       return callback(err);
     }
-    // console.log("RESULT from add pw to user ", result);
-    callback(null);
+    console.log("RESULT from add pw to user ", result);
+    callback(null, result);
   });
 }

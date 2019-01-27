@@ -33,25 +33,30 @@ module.exports = (userid='a', callback) => {
 
   function addPWToAzureUser(callback) {
         let sql = `SELECT * FROM dbo.pw_table WHERE userid='${userid}'`
-        // let sql = "INSERT INTO dbo.user_table (userid, fname, lname, email, phone) VALUES ('${userid}', '${fname}', '${lname}', '${email}', '${phone}')"
-        // console.log('getting pw from the Table...');
-        // console.log('SQL: ', sql)
 
         // Read all rows from table
         var request = new Request(
             sql,
             function(err, rowCount, rows)
             {
-                // console.log(rowCount + ' row(s) returned');
-                return callback(null, rows)
+                //console.log(rowCount + ' row(s) returned');
+
             }
         );
+        connection.execSql(request);
 
+        let services = {};
+        console.log("here")
         request.on('row', function(columns) {
             columns.forEach(function(column) {
-                console.log("%s\t%s", column.metadata.colName, column.value);
+              services += '"'+column.metadata.colName +'": ';
+              services += '"'+ column.value + ",";
+
+                //console.log("%s\t%s", column.metadata.colName, column.value);
             });
+            //console.log('services are ', services)
+            //console.log(services);
+            callback(null, services);
         });
-        connection.execSql(request);
   }
 }
