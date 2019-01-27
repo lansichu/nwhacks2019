@@ -3,10 +3,11 @@ const kv = lib.utils.kv['@0.1.8'];
 const request = require('request');
 
 
-module.exports = async (userid, binary) => {
+module.exports = async (userid = 0
+  , binary) => {
   //ms call with userid and binary
   if (status == '202') {
-      let url = // MS returned URL
+      // let url = // MS returned URL
       while (status != 'enrolled') {
           status = request({
               uri: url
@@ -17,7 +18,7 @@ module.exports = async (userid, binary) => {
                   return res;
               }
           })
-      } 
+      }
 
       let result = await kv.set({
         key: userid, // (required)
