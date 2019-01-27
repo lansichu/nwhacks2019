@@ -29,7 +29,7 @@ module.exports = (callback) => {
 	    	if (err) { 
 		  		return callback(err); 
 		  	}else{
-		  		return callback(null, JSON.parse(body).identificationProfileId);
+		  		return callback(null, JSON.parse(body).verificationProfileId);
 		  	}
 		}
 	);

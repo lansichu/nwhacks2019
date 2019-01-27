@@ -6,14 +6,11 @@ module.exports = (context, callback) => {
     if (err) {
       return callback(err);
     }
-    console.log("RESULT 1 ", result);
     userid = result;
-      console.log('userid is ', userid);
       lib[`${context.service.identifier}.azure.saveAzureUser`](userid, (err, result) => {
         if (err) {
           return callback(err);
         }
-        console.log("RESULT 2 ", result);
         callback(null, '"id": "'+userid+'"}');
       });
   });
