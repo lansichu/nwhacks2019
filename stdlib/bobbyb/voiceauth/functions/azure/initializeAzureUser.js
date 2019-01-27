@@ -9,7 +9,7 @@ const request = require('request');
 module.exports = (userID="", wavFile, callback) => {
 	request({
 	    headers: {
-      	'Ocp-Apim-Subscription-Key': Ocp_Apim_Subscription_Key,
+      	'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key,
 	      'Content-Type': "audio/wav"
 	    },
 	    uri: 'https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles/'+userID+'/enroll?shortAudio=false',
