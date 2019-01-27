@@ -1,4 +1,4 @@
-const lib = require('lib')({token: 'b_vkISlNCO4L3-OxoUo98SeGofHj0VzyhiL5mLvwuNvBHQHp17CRNoMhcTL_KuiR'});
+const lib = require('lib')({token: STDLIB_TOKEN});
 const kv = lib.utils.kv['@0.1.8'];
 
 
