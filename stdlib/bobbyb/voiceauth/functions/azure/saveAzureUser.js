@@ -1,4 +1,4 @@
-module.exports = (userid='a', fname, lname, email, phone, callback) => {
+module.exports = (userid='a', callback) => {
   var Connection = require('tedious').Connection;
   var Request = require('tedious').Request;
 
@@ -22,7 +22,7 @@ module.exports = (userid='a', fname, lname, email, phone, callback) => {
           if (err)
           {
               console.log(err)
-              return callback("success")
+              return callback(err)
           }
           else
           {
@@ -32,9 +32,10 @@ module.exports = (userid='a', fname, lname, email, phone, callback) => {
   );
 
   function saveAzureUser(callback) {
-        let sql = `INSERT INTO dbo.user_table (userid, fname, lname, email, phone) VALUES (${userid}, ${fname}, ${lname}, ${email}, ${phone})`
+        let sql = `INSERT INTO dbo.user_table (userid) VALUES ('${userid}')`
         // let sql = "INSERT INTO dbo.user_table (userid, fname, lname, email, phone) VALUES ('${userid}', '${fname}', '${lname}', '${email}', '${phone}')"
         console.log('Inserting user into the Table...');
+        console.log('SQL: ', sql)
 
         // Read all rows from table
         var request = new Request(
@@ -46,12 +47,11 @@ module.exports = (userid='a', fname, lname, email, phone, callback) => {
             }
         );
 
-        request.on('row', function(columns) {
-            // let columns = [];
-            columns.forEach(function(column) {
-                console.log("%s\t%s", column.metadata.colName, column.value);
-            });
-        });
+        // request.on('row', function(columns) {
+        //     columns.forEach(function(column) {
+        //         console.log("%s\t%s", column.metadata.colName, column.value);
+        //     });
+        // });
         connection.execSql(request);
   }
 }
