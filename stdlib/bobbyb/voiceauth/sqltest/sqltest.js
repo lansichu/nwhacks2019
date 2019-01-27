@@ -4,12 +4,12 @@ var Request = require('tedious').Request;
 // Create connection to database
 var config =
 {
-    userName: process.env.userName, // update me
-    password: process.env.password, // update me
-    server: process.env.server,
+    userName: 'ant2', // update me
+    password: 'vancouver2019?', // update me
+    server: 'nwhacks2019server.database.windows.net', // update me
     options:
     {
-        database: process.env.database, //update me
+        database: 'nwhacks2019db', //update me
         encrypt: true
     }
 }
