@@ -1,4 +1,4 @@
-module.exports = (userid=a, fname, lname, email, phone) => {
+module.exports = (userid='a', fname, lname, email, phone, callback) => {
   var Connection = require('tedious').Connection;
   var Request = require('tedious').Request;
 
@@ -22,15 +22,16 @@ module.exports = (userid=a, fname, lname, email, phone) => {
           if (err)
           {
               console.log(err)
+              return callback("success")
           }
           else
           {
-              saveAzureUser()
+              saveAzureUser(callback)
           }
       }
   );
 
-  function saveAzureUser() {
+  function saveAzureUser(callback) {
         let sql = `INSERT INTO dbo.user_table (userid, fname, lname, email, phone) VALUES (${userid}, ${fname}, ${lname}, ${email}, ${phone})`
         // let sql = "INSERT INTO dbo.user_table (userid, fname, lname, email, phone) VALUES ('${userid}', '${fname}', '${lname}', '${email}', '${phone}')"
         console.log('Inserting user into the Table...');
@@ -41,11 +42,12 @@ module.exports = (userid=a, fname, lname, email, phone) => {
             function(err, rowCount, rows)
             {
                 console.log(rowCount + ' row(s) returned');
-                process.exit();
+                return callback(null, rows)
             }
         );
 
         request.on('row', function(columns) {
+            // let columns = [];
             columns.forEach(function(column) {
                 console.log("%s\t%s", column.metadata.colName, column.value);
             });
