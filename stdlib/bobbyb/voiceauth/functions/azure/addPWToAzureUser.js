@@ -1,4 +1,8 @@
-module.exports = (userid='a', service, password, callback) => {
+/*
+* @param {string} userid
+*/
+
+module.exports = (userid='abfhfjfhsdf', service, password, callback) => {
   var Connection = require('tedious').Connection;
   var Request = require('tedious').Request;
 

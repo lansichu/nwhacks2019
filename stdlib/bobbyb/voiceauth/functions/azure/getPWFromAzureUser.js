@@ -51,11 +51,7 @@ module.exports = (userid='a', callback) => {
             columns.forEach(function(column) {
               services += '"'+column.metadata.colName +'": ';
               services += '"'+ column.value + ",";
-
-                //console.log("%s\t%s", column.metadata.colName, column.value);
             });
-            //console.log('services are ', services)
-            //console.log(services);
             callback(null, services);
         });
   }

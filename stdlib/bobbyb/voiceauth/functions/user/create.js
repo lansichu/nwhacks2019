@@ -11,7 +11,7 @@ module.exports = (context, callback) => {
         if (err) {
           return callback(err);
         }
-        callback(null, '"id": "'+userid+'"}');
+        callback(null, {'id': userid});
       });
   });
 };
