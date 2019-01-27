@@ -15,9 +15,7 @@ module.exports = (context, callback) => {
           return callback(err);
         }
         console.log("RESULT 2 ", result);
-        let userid = result;
-        callback(null, userid);
+        callback(null, '"id": "'+userid+'"}');
       });
   });
-
 };
