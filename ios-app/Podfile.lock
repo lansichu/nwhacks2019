@@ -1,0 +1,86 @@
+PODS:
+  - Alamofire (4.8.1)
+  - AlertHUDKit (1.1.1)
+  - CryptoSwift (0.13.1)
+  - FavIcon (3.0.6)
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.4.0)
+  - Kingfisher (5.1.0)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Result (4.1.0)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxKeyboard (0.9.0):
+    - RxCocoa (>= 4.3.1)
+    - RxSwift (>= 4.3.1)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SwiftKeychainWrapper (3.2.0)
+  - SwiftyBeaver (1.6.1)
+  - Swinject (2.5.0)
+  - UIImageColors (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlertHUDKit
+  - CryptoSwift
+  - FavIcon
+  - IGListKit
+  - Kingfisher
+  - Moya
+  - RxCocoa
+  - RxKeyboard
+  - RxSwift
+  - SwiftKeychainWrapper
+  - SwiftyBeaver
+  - Swinject
+  - UIImageColors
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlertHUDKit
+    - CryptoSwift
+    - FavIcon
+    - IGListKit
+    - Kingfisher
+    - Moya
+    - Result
+    - RxAtomic
+    - RxCocoa
+    - RxKeyboard
+    - RxSwift
+    - SwiftKeychainWrapper
+    - SwiftyBeaver
+    - Swinject
+    - UIImageColors
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlertHUDKit: d9024cb58da0beff88c2b39da608492ef0623025
+  CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
+  FavIcon: e07ba9dd3cac1f76b81ccaa08fc2b41baa000b07
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
+  SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  UIImageColors: c83669aff7ceb55a3b3f2c398f3b5c14632a267b
+
+PODFILE CHECKSUM: 1de58764591bb9d1d10b162fad7bc8a2f14b427c
+
+COCOAPODS: 1.5.3

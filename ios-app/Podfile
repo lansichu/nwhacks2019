@@ -1,0 +1,23 @@
+platform :ios, '12.0'
+
+target 'NWHacks2019' do
+  use_frameworks!
+  inhibit_all_warnings!
+
+  # Pods for NWHacks2019
+  pod 'Moya'
+  pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxKeyboard'
+  pod 'Swinject'
+  pod 'SwiftyBeaver'
+  pod 'SwiftKeychainWrapper'
+  pod 'IGListKit'
+  pod 'Kingfisher'
+  pod 'CryptoSwift'
+  pod 'AlertHUDKit'
+  pod 'FavIcon'
+  pod 'UIImageColors'
+
+end
