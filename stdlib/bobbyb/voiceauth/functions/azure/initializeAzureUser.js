@@ -1,37 +1,27 @@
+const request = require('request');
+
 /**
 * A basic Hello World function
-* @returns {string}
+* @param {string} userID
+* @param {buffer} wavFile
+* @returns {object}
 */
-
-/*const request = require('request');
-module.exports = (callback) => {
-	request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
-	  if (err) { 
-	  	return callback(err); 
-	  }else{
-	  	return callback(null, body);
-	  }
-
-	});
-};*/
-
-
-const request = require('request');
-module.exports = (callback) => {
-
-request({
-    headers: {
-      'Ocp-Apim-Subscription-Key': '17d0ba94626641f29ada3e5bdd0d19e5',
-      'Content-Type': 'application/json'
-    },
-    uri: 'https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles',
-    body: '{"locale":"en-us"}',
-    method: 'POST'
-  	}, function (err, res, body) {
-    	if (err) { 
-	  		return callback(err); 
-	  	}else{
-	  		return callback(null, JSON.parse(body).identificationProfileId);
-	  	}
-	  });
+module.exports = (userID="", wavFile, callback) => {
+	request({
+	    headers: {
+      	'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key,
+	      'Content-Type': "audio/wav"
+	    },
+	    uri: 'https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles/'+userID+'/enroll?shortAudio=false',
+	    body: wavFile,
+    	encoding: null,
+	    method: 'POST'
+	  	}, function (err, res, body) {
+	    	if (err) { 
+		  		return callback("Damn sth is wrong"); 
+		  	}else{
+		  		return callback(null, JSON.parse(body));
+		  	}
+		}
+	);
 };
